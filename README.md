@@ -11,7 +11,7 @@ Follow below steps to  install and run
 # APIS
 Below are the apis
 
-1. Create User: `http://127.0.0.1:8000/api/account/user-create/` method=POST.
+1. Create User: `http://127.0.0.1:8000/api/account/user-create/` method=POST. #only mobile and password are required to create user.
 2. Login: `http://127.0.0.1:8000/api/login-user/`  method=POST.
 3. Create Recipe: `http://127.0.0.1:8000/api/recipes/` method=POST.
 4. Get Recipe: `http://127.0.0.1:8000/api/recipes/` method=GET.

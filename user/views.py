@@ -19,9 +19,12 @@ class UserCreateAPI(APIView):
 
     def post(self,request,format=None):
         data =request.data
-        first_name =data['first_name']
-        last_name =data['last_name']
-        username =data['username']
+        if 'first_name' in data:
+            first_name =data['first_name']
+        if 'last_name' in data:
+            last_name =data['last_name']
+        if 'username' in data:
+            username =data['username']
         mobile =data['mobile']
         if 'email' in data:
             email = data['email']
@@ -32,7 +35,7 @@ class UserCreateAPI(APIView):
 
         if not re.match(r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', password):
             return Response({"message": "Password must contain at least one character, one numeric digit,one special character,and be at least 8 characters long."}, status=400)
-        user_= User.objects.get_or_create(username=username,first_name=first_name,last_name=last_name,mobile=mobile)[0]
+        user_= User.objects.get_or_create(mobile=mobile)[0]
         user_.set_password(password)
         user_.save()
         token=Token.objects.create(user = user_).key
