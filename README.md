@@ -26,4 +26,9 @@ Below are the apis
 
 for any information, feel free to contact at 'vandanaiec3093@gmail.com'
 
+For DEMO:
+url: http://vandanap.pythonanywhere.com/admin
+username: 9988665544
+password: 9988665544
+
 
